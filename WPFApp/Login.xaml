@@ -1,0 +1,77 @@
+﻿<Window x:Class="WPFApp.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp"
+        mc:Ignorable="d" Loaded="OnLoad"
+        Title="Login" Height="450" Width="400">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10px" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.RowSpan="2" Grid.ColumnSpan="2" Background="#333">
+                
+            </Border>
+            <StackPanel VerticalAlignment="Center" Grid.Row="0" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Center" Text="LOGIN FORM"  FontSize="36" FontFamily="Helvetica" Foreground="White" />
+                <Label FontFamily="Helvetica" Content="Username" Foreground="White" FontSize="18" />
+                <TextBox FontFamily="Helvetica" Name="username" Foreground="Silver" Padding="0 5px 0 0" Margin="5px 0 10px 0" Background="#666" VerticalAlignment="Center" BorderBrush="Transparent" Height="30px" />
+                <Label FontFamily="Helvetica" Content="Password" Foreground="White" FontSize="18" />
+                <PasswordBox FontFamily="Helvetica" Name="password" Foreground="Silver" Padding="0 5px 0 0" Margin="5px 0 10px 0" Background="#666" VerticalAlignment="Center" BorderBrush="Transparent" Height="30px" />
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1">
+                <Button Cursor="Hand" FontFamily="Helvetica" FontSize="18" Name="login" Margin=" 5px 0 0 0" Height="40px" Width="100px" BorderBrush="Transparent" Content="Login" Foreground="White" Click="login_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#e84a5f"/>
+                            <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                            </Setter>
+                        <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#e5334b"/>
+                        </Trigger>
+                    </Style.Triggers>
+                    </Style>
+               </Button.Style>
+                </Button>
+                <Button Cursor="Hand" FontFamily="Helvetica" Foreground="#333" FontWeight="Bold" FontSize="18" Name="quit" Margin=" 5px 0 0 0" Height="40px" Width="100px" BorderBrush="Transparent" Content="Quit" Click="quit_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Silver"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#e6e6e6"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
